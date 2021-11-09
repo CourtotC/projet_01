@@ -53,9 +53,25 @@ class AccueilController extends AbstractController
 
 
 
+//     #[Route("/produits/{var}")]
+//     function afficheCreneau($var){
+// return $this->render('creneau/affiche.html.twig',['title'=>ucwords(str_replace('-',' ',$var))]);
+//     }
+
+
+
+
     #[Route("/produits/{var}")]
     function afficheCreneau($var){
-return $this->render('creneau/affiche.html.twig',['title'=>ucwords(str_replace('-',' ',$var))]);
+
+      $commentaires=[
+        'Je ne serai pas disponible sur cette période (Gautier)',
+        'Je veux bien assurer la relève (Sophie)',
+        "Pensez à reporter l'heure manquante (Mélanie)",
+      ];
+
+      return $this->render('creneau/affiche.html.twig',['title'=>ucwords(str_replace('-',' ',$var)),
+    'commentaires'=> $commentaires]);
     }
 
 

@@ -1,7 +1,32 @@
+{% extends "base.html.twig" %}
+{% block title %}
+	coucou
+{% endblock %}
+{% block body %}
+	
+
 <h1>{{title}}</h1>
 <div>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis sint accusamus pariatur rerum corrupti aliquam neque atque dolore temporibus! Mollitia velit, quas voluptatibus deleniti necessitatibus repudiandae architecto facilis magnam amet.</p>
-	<p>Cumque molestias porro assumenda sapiente iusto! Voluptates totam quis veniam magni repudiandae nam quidem, dolore expedita. Velit commodi itaque similique omnis. Ipsam iusto harum illo facere repellat explicabo esse dolorem.</p>
-	<p>Quaerat, accusamus, possimus eius aliquid quia dolor eligendi reiciendis enim saepe repellat tempora, fugiat id nisi neque ad? Ea commodi voluptate cupiditate iste voluptatum doloribus praesentium, rem itaque tempora iusto!</p>
-	<p>Illo sunt suscipit corporis nam! Tenetur necessitatibus cumque omnis facilis modi aspernatur molestias placeat error unde ipsum sint ipsam, consectetur minima delectus est officiis dolor! Deleniti nesciunt necessitatibus similique voluptas!</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis sint accusamus pariatur rerum corrupti aliquam
+		neque atque dolore temporibus! Mollitia velit, quas voluptatibus deleniti necessitatibus repudiandae architecto
+		facilis magnam amet.</p>
+	<p>Cumque molestias porro assumenda sapiente iusto! Voluptates totam quis veniam magni repudiandae nam quidem,
+		dolore expedita. Velit commodi itaque similique omnis. Ipsam iusto harum illo facere repellat explicabo esse
+		dolorem.</p>
+	<p>Quaerat, accusamus, possimus eius aliquid quia dolor eligendi reiciendis enim saepe repellat tempora, fugiat id
+		nisi neque ad? Ea commodi voluptate cupiditate iste voluptatum doloribus praesentium, rem itaque tempora iusto!
+	</p>
+	<p>Illo sunt suscipit corporis nam! Tenetur necessitatibus cumque omnis facilis modi aspernatur molestias placeat
+		error unde ipsum sint ipsam, consectetur minima delectus est officiis dolor! Deleniti nesciunt necessitatibus
+		similique voluptas!</p>
 </div>
+
+
+<h2>Commentaires ({{ commentaires | length }})</h2>
+<ul>
+{% for comment in commentaires %}
+	<li>{{ comment }}</li>
+	{% endfor %}
+
+</ul>
+{% endblock %}
