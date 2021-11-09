@@ -34,6 +34,11 @@ class Intervenant
      */
     private $matieres;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Prenom;
+
     public function __construct()
     {
         $this->matieres = new ArrayCollection();
@@ -94,6 +99,18 @@ class Intervenant
                 $matiere->setFkIntervenant(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->Prenom;
+    }
+
+    public function setPrenom(string $Prenom): self
+    {
+        $this->Prenom = $Prenom;
 
         return $this;
     }
