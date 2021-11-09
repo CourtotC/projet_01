@@ -15,7 +15,7 @@ class Commandes
 
     /**
      * @Route("/commandes/{joker}", requirements={"joker"= "^(soldées)|(en cours)$"})
-     */
+     */ 
     public function statut($joker)
     {
         return new Response("liste des commandes '{$joker}'");
