@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route("/intervenant", name: "intervenant_")]
 class IntervenantController extends AbstractController
 {
     // #[Route("/user", methods: "GET")]
@@ -74,6 +75,18 @@ class IntervenantController extends AbstractController
         $em->flush();
         return $this->intervenantsList();
     }
+
+    #[Route("/intervenant/dashboard", name: "intervenant_dashboard")]
+    public function intervenantsDashboard() {
+        return $this->render('Intervenant/intervenant_dashboard.html.twig');
+    }
+
+    #[Route("/intervenant/matieres/lister", name: "intervenant_matieres_lister")]
+    public function intervenantsMatieresLister() {
+        return $this->render('Intervenant/intervenant_matieres_lister.html.twig');
+        // intervenant/intervenant_matieres_lister
+    }
+    
 }
 
 
