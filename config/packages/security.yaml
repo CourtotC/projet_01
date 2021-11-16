@@ -5,6 +5,9 @@ security:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
         App\Entity\User:
             algorithm: auto
+    role_hierarchy:
+        ROLE_ADMIN : [ROLE_INTERVENANT, ROLE_ALTERNANT]
+        ROLE_INTERVENANT : ROLE_ALTERNANT
 
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
@@ -37,3 +40,6 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+         - { path: ^/admin, roles: ROLE_ADMIN }
+         - { path: ^/intervenant, roles: ROLE_INTERVENANT }
+         - { path: ^/alternant, roles: ROLE_ALTERNANT }

@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+{% block title %}Mon tableau de bord (admin){% endblock %}
+{% block body %}
+	
+<style>
+    .example-wrapper {margin: 1em auto; max-width: 800px;width: 95%; font: 18px/1.5 sans-serif;}
+    .example-wrapper code{background: #F5F5F5; padding: 2px 6px;}
+</style>
+
+
+<div class="example-wrapper">
+    <h1>Mon tableau de bord (admin)</h1>
+	<ul><a href="{{path('/intervenant/matieres/lister')}}" title="liste des matieres">Liste des matieres</a></ul>
+
+
+</div>
+
+
+<h2>Commentaires ({{ commentaires | length }})</h2>
+<ul>
+{% for comment in commentaires %}
+	<li>{{ comment }}</li>
+	{% endfor %}
+
+</ul>
+{% endblock %}

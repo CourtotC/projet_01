@@ -3,6 +3,39 @@
         <a style="color: #fff;" class="nav-link" href="#">Horaires</a>
     </li>
     <li class="nav-item">
-        <a style="color: #fff;" class="nav-link" href="#">Dates</a>
+        <a style="color: #fff;" class="nav-link" href="#">Dates</a></li>
+
+    {% if app.user %}
+
+    <!-- <li class="nav-item"><a style="color: #fff;" href="#" class="nav-link">Mon planning</a></li> -->
+    <li class="nav-item"><a style="color: #fff;" href="{{path('app_logout')}}" class="nav-link">Logout
+            ({{app.user.prenom}})</a></li>
+
+
+    {% if is_granted("ROLE_ADMIN") %}
+    <li class="nav-item"><a style="color: #fff;" href="{{path('admin_dashboard.html.twig')}}" class="nav-link">Dashboard Admin</a>
     </li>
+    {% endif %}
+
+    {% if is_granted("ROLE_INTERVENANT") %}
+    <li class="nav-item"><a style="color: #fff;" href="{{path('intervenant_dashboard.html.twig')}}" class="nav-link">Dashboard
+            intervenant</a></li>
+    {% endif %}
+
+    {% if is_granted("ROLE_ALTERNANT") %}
+    <li class="nav-item"><a style="color: #fff;" href="{{path('alternant_dashboard.html.twig')}}" class="nav-link">Dashboard
+            Alternant</a></li>
+
+    {% endif %}
+
+
+
+    {% else %}
+
+    <li class="nav-item"><a style="color: #fff;" href="{{path('app_login')}}" class="nav-link">login</a></li>
+    <li class="nav-item"><a style="color: #fff;" href="{{path('app_register')}}" class="nav-link">Créer compte</a></li>
+
+    {% endif %}
+
+
 </ul>
