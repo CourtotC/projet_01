@@ -9,7 +9,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route("/intervenant", name: "intervenant_")]
+
+ // V2 si on met une route générale ici on met le debut de la route et du name
+//V2 #[Route("/intervenant/", name: "intervenant")]
 class IntervenantController extends AbstractController
 {
     // #[Route("/user", methods: "GET")]
@@ -36,6 +38,8 @@ class IntervenantController extends AbstractController
     //     return new Response('mise a jour ok');
     // }
 
+
+   //V2 #[Route("create", name: "_create")]
     #[Route("/intervenant/create", name: "intervenant_create")]
     public function new(Request $request)
     {
@@ -53,7 +57,7 @@ class IntervenantController extends AbstractController
         }
         return $this->render('intervenant/new.html.twig', ['intervenantForm' => $form->createView(),]);
     }
-
+//V2 #[Route("liste", name: "_liste")]
     #[Route("/intervenant/liste", name: "intervenant_liste")]
     public function intervenantsList()
     {
@@ -67,6 +71,7 @@ class IntervenantController extends AbstractController
             ]);
         }
 
+      //V2   #[Route("delete/{value}", name: '_delete')]
         #[Route("intervenant/delete/{value}", name: 'intervenant_delete')]
     public function delete($value) {
         $em = $this->getDoctrine()->getManager();
@@ -75,12 +80,13 @@ class IntervenantController extends AbstractController
         $em->flush();
         return $this->intervenantsList();
     }
-
+ //V2 #[Route("dashboard", name: "_dashboard")]
     #[Route("/intervenant/dashboard", name: "intervenant_dashboard")]
     public function intervenantsDashboard() {
         return $this->render('Intervenant/intervenant_dashboard.html.twig');
     }
 
+    //V2 #[Route("/matieres/lister", name: "_matieres_lister")]
     #[Route("/intervenant/matieres/lister", name: "intervenant_matieres_lister")]
     public function intervenantsMatieresLister() {
         return $this->render('Intervenant/intervenant_matieres_lister.html.twig');
