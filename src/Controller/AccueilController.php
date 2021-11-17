@@ -74,7 +74,7 @@ class AccueilController extends AbstractController
     // 'commentaires'=> $commentaires]);
     // }
 
- #[Route("/")]
+ #[Route("/", name:'racine')]
  function bonjour(){
    return $this->render('general/accueil.html.twig');
  }

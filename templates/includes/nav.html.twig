@@ -13,17 +13,20 @@
 
 
     {% if is_granted("ROLE_ADMIN") %}
-    <li class="nav-item"><a style="color: #fff;" href="{{path('admin_dashboard.html.twig')}}" class="nav-link">Dashboard Admin</a>
+    <li class="nav-item"><a style="color: #fff;" href="{{path('admin_dashboard')}}"
+            class="nav-link">Dashboard Admin</a>
     </li>
     {% endif %}
 
     {% if is_granted("ROLE_INTERVENANT") %}
-    <li class="nav-item"><a style="color: #fff;" href="{{path('intervenant_dashboard.html.twig')}}" class="nav-link">Dashboard
+    <li class="nav-item"><a style="color: #fff;" href="{{path('intervenant_dashboard')}}"
+            class="nav-link">Dashboard
             intervenant</a></li>
     {% endif %}
 
     {% if is_granted("ROLE_ALTERNANT") %}
-    <li class="nav-item"><a style="color: #fff;" href="{{path('alternant_dashboard.html.twig')}}" class="nav-link">Dashboard
+    <li class="nav-item"><a style="color: #fff;" href="{{path('alternant_dashboard')}}"
+            class="nav-link">Dashboard
             Alternant</a></li>
 
     {% endif %}

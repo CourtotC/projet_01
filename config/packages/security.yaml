@@ -6,8 +6,9 @@ security:
         App\Entity\User:
             algorithm: auto
     role_hierarchy:
-        ROLE_ADMIN : [ROLE_INTERVENANT, ROLE_ALTERNANT]
+        ROLE_ADMIN : ROLE_INTERVENANT
         ROLE_INTERVENANT : ROLE_ALTERNANT
+
 
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:

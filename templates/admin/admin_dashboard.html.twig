@@ -10,17 +10,11 @@
 
 <div class="example-wrapper">
     <h1>Mon tableau de bord (admin)</h1>
-	<ul><a href="{{path('/intervenant/matieres/lister')}}" title="liste des matieres">Liste des matieres</a></ul>
+	<ul><a href="{{path('intervenant_matieres_lister')}}" title="liste des matieres">Liste des matieres</a></ul>
 
 
 </div>
 
 
-<h2>Commentaires ({{ commentaires | length }})</h2>
-<ul>
-{% for comment in commentaires %}
-	<li>{{ comment }}</li>
-	{% endfor %}
 
-</ul>
 {% endblock %}
