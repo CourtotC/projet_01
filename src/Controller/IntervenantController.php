@@ -92,6 +92,11 @@ class IntervenantController extends AbstractController
         return $this->render('Intervenant/intervenant_matieres_lister.html.twig');
         // intervenant/intervenant_matieres_lister
     }
+    #[Route("/cucu", name: "intervenant_matieres_lister")]
+    public function cucu() {
+        return $this->render('Intervenant/newimage.html.twig');
+        // intervenant/intervenant_matieres_lister
+    }
     
 }
 
