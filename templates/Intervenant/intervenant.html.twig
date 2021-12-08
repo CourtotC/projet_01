@@ -28,6 +28,7 @@
 
         <li> <img src="/images/intervenant/{{i.getImageName}}" alt="{{i.getImageName}}"/>{{i.getNom()}}, {{i.getPrenom()}}, <strong>{{i.getSpecialiteprofessionnelle()}}</strong><a href="{{ path('intervenant_delete', {'value': i.getId() } ) }}"> Delete</a></li>
        
+        <li> <img src="{{vich_uploader_asset( images,'imageName')}}" alt="{{i.getImageName}}"/>{{i.getNom()}}, {{i.getPrenom()}}, <strong>{{i.getSpecialiteprofessionnelle()}}</strong><a href="{{ path('intervenant_delete', {'value': i.getId() } ) }}"> Delete</a></li>
 
         {% endfor %}
         {% else %}
