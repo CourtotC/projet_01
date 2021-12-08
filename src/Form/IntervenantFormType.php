@@ -8,6 +8,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
+
 
 class IntervenantFormType extends AbstractType
 {
@@ -20,7 +22,10 @@ class IntervenantFormType extends AbstractType
                 'empty_data' => 'cadre',
             ])
             ->add('Prenom', TextType::class)
+            ->add('imageFile', VichImageType::class)
             ->add('enregistrer', SubmitType::class);
+            
+            
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -45,7 +45,7 @@ class Intervenant
         /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
-     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", size="imageSize")
+     * @Vich\UploadableField(mapping="intervenant", fileNameProperty="imageName", size="imageSize")
      * 
      * @var File|null
      */
@@ -120,7 +120,7 @@ class Intervenant
     public function __construct()
     {
         $this->matieres = new ArrayCollection();
-        $this->updatedAt = new \DateTime();
+        //$this->updatedAt = new \DateTime();
     }
 
     public function getId(): ?int
